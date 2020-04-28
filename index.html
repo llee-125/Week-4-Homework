@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+
+  <title>Online Quiz</title>
+</head>
+<body>
+
+  <div id="container">
+      <div id="start">Start Quiz</div>
+      <div id="quiz" style="display: none">
+        <div id="question"></div>
+        <div id="qImg"></div>
+          <div id="choices">
+            <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+            <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+            <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+          </div>
+        <div id="timer"></div>
+          <div id="counter"></div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+        <div id="progress"></div>
+      <div id="score" style="display: none"></div>
+      </div>
+    </div>
+  </div>
+  
+  <button type="button">Click Me!</button>
+
+  <!-- Timer Bar, clicks down
+  Highscores -->
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.0.slim.js" integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

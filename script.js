@@ -18,10 +18,10 @@ let questions = [
   {
       question : "What does HTML stand for?",
       imgSrc: "",
-      choiceA : "Correct",
-      choiceB : "Wrong",
-      choiceC : "Wrong",
-      choiceD : "Wrong",
+      choiceA : "A",
+      choiceB : "B",
+      choiceC : "C",
+      choiceD : "D",
       correct : "A"
   }, {
       question : "What does CSS stand for?",
@@ -103,6 +103,14 @@ function renderCounter() {
     count++
   } else {
     count = 0;
+    if(runningQuestion < lastQuestion){
+      runningQuestion++;
+      renderQuestion();
+    } else {
+      // end the quiz and show the score
+      clearInterval(TIMER);
+      scoreRender();
+    }
   }
 }
 
@@ -118,11 +126,15 @@ function checkAnswer(answer) {
     // change progress color to red
     answerIsWrong();
   }
+  count = 0;
   if(runningQuestion < lastQuestion){
     runningQuestion++;
     renderQuestion();
-
-  }
+  } else {
+    // end the quiz and show the score
+        clearInterval(TIMER);
+        scoreRender();
+}
 }
 
 // answer is correct
@@ -133,4 +145,22 @@ function answerIsCorrect() {
 // answer is wrong
 function answerIsWrong() {
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
+}
+
+// score render
+function scoreRender(){
+  scoreDiv.style.display = "block";
+
+  // calculate the amount of question percenter answered by the user
+  const scorePercent = Math.round(100 * score/questions.length);
+
+  // choose the image based on the scorePercent
+  let img = (scorePercent >= 80) ? "" :
+            (scorePercent >= 60) ? "" :
+            (scorePercent >= 40) ? "" :
+            (scorePercent >= 20) ? "" :
+            "";
+    scoreDiv.innerHTML = "<img src=" + img + ">";
+    scoreDiv.innerHTML = "<p>" + scorePercent + "%</p>";
+            
 }

@@ -2,7 +2,6 @@
 const start = document.getElementById ("start");
 const quiz = document.getElementById ("quiz");
 const question = document.getElementById ("question");
-// const qImg = document.getElementById ("qImg");
 const choiceA = document.getElementById ("A");
 const choiceB = document.getElementById ("B");
 const choiceC = document.getElementById ("C");
@@ -16,7 +15,6 @@ const scoreDiv = document.getElementById ("scoreContainer");
 let questions = [
   {
       question : "Which task is not a responsibility of a full stack developer?",
-      // imgSrc: "",
       choiceA : "Explaining your code to your team",
       choiceB : "Back End Development",
       choiceC : "Quality Control Engineer",
@@ -24,7 +22,6 @@ let questions = [
       correct : "A"
   }, {
       question : "What language is NOT used as a tool for front end developers?",
-      // imgSrc: "",
       choiceA : "HTML",
       choiceB : "Excel",
       choiceC : "CSS",
@@ -32,7 +29,6 @@ let questions = [
       correct : "B"
   }, {
     question : "Which code MUST appear at the very bottom of body in html?",
-      // imgSrc: "",
       choiceA : "link to jQuery",
       choiceB : "link to CSS",
       choiceC : "link to JavaScript",
@@ -40,7 +36,6 @@ let questions = [
       correct : "C"
   }, {
     question : "What symbol/s surrounds an array?",
-      // imgSrc: "",
       choiceA : "{}",
       choiceB : " `` ",
       choiceC : "()",
@@ -48,7 +43,6 @@ let questions = [
       correct : "D"
   }
 ];
-
 // create some variables
 
 const lastQuestion = questions.length -1;
@@ -65,7 +59,6 @@ function renderQuestion(){
   let q = questions[runningQuestion];
 
   question.innerHTML = "<p>" + q.question +"</p>";
-  // qImg.innerHTML = "<img src=" + q.imgSrc +">";
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
@@ -91,9 +84,6 @@ function renderProgress (){
 }
 
 // counter render
-
-
-
 function renderCounter() {
   if(count <= questionTime){
     counter.innerHTML = count;
@@ -135,17 +125,14 @@ function checkAnswer(answer) {
         scoreRender();
 }
 }
-
 // answer is correct
 function answerIsCorrect() {
   document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
-
 // answer is wrong
 function answerIsWrong() {
   document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
-
 // score render
 function scoreRender(){
   scoreDiv.style.display = "block";
@@ -153,15 +140,9 @@ function scoreRender(){
   // calculate the amount of question percenter answered by the user
   const scorePerCent = Math.round(100 * score/questions.length);
 
-  // // choose the image based on the scorePercent
-  // let img = (scorePercent >= 80) ? "" :
-  //           (scorePercent >= 60) ? "" :
-  //           (scorePercent >= 40) ? "" :
-  //           (scorePercent >= 20) ? "" :
-    //         "";
     // scoreDiv.innerHTML = "<img src=" + img + ">";
+
     scoreDiv.innerHTML = "<p>" + scorePerCent + "%</p>";
-    console.log(scorePerCent);
-    
-            
-}
+    prompt("You received a score of: " + scorePerCent + "%." + "  " + "Please enter your name.");
+    console.log("You received a score of: " + scorePerCent + "%");
+}            

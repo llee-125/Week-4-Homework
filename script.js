@@ -1,4 +1,3 @@
-
 // select all elements
 const start = document.getElementById ("start");
 const quiz = document.getElementById ("quiz");
@@ -11,7 +10,7 @@ const choiceD = document.getElementById ("D");
 const counter = document.getElementById ("counter");
 const timeGauge = document.getElementById ("timeGauge");
 const progress = document.getElementById ("progress");
-const scoreDiv = document.getElementById ("score");
+const scoreDiv = document.getElementById ("scoreContainer");
 
 //create our questions
 let questions = [
@@ -152,15 +151,17 @@ function scoreRender(){
   scoreDiv.style.display = "block";
 
   // calculate the amount of question percenter answered by the user
-  const scorePercent = Math.round(100 * score/questions.length);
+  const scorePerCent = Math.round(100 * score/questions.length);
 
-  // choose the image based on the scorePercent
-  let img = (scorePercent >= 80) ? "" :
-            (scorePercent >= 60) ? "" :
-            (scorePercent >= 40) ? "" :
-            (scorePercent >= 20) ? "" :
+  // // choose the image based on the scorePercent
+  // let img = (scorePercent >= 80) ? "" :
+  //           (scorePercent >= 60) ? "" :
+  //           (scorePercent >= 40) ? "" :
+  //           (scorePercent >= 20) ? "" :
     //         "";
     // scoreDiv.innerHTML = "<img src=" + img + ">";
-    scoreDiv.innerHTML = "<p>" + scorePercent + "%</p>";
+    scoreDiv.innerHTML = "<p>" + scorePerCent + "%</p>";
+    console.log(scorePerCent);
+    
             
 }

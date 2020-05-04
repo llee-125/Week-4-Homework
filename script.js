@@ -3,7 +3,7 @@
 const start = document.getElementById ("start");
 const quiz = document.getElementById ("quiz");
 const question = document.getElementById ("question");
-const qImg = document.getElementById ("qImg");
+// const qImg = document.getElementById ("qImg");
 const choiceA = document.getElementById ("A");
 const choiceB = document.getElementById ("B");
 const choiceC = document.getElementById ("C");
@@ -16,36 +16,36 @@ const scoreDiv = document.getElementById ("score");
 //create our questions
 let questions = [
   {
-      question : "What does HTML stand for?",
-      imgSrc: "",
-      choiceA : "A",
-      choiceB : "B",
-      choiceC : "C",
-      choiceD : "D",
+      question : "Which task is not a responsibility of a full stack developer?",
+      // imgSrc: "",
+      choiceA : "Explaining your code to your team",
+      choiceB : "Back End Development",
+      choiceC : "Quality Control Engineer",
+      choiceD : "Writing a readme",
       correct : "A"
   }, {
-      question : "What does CSS stand for?",
-      imgSrc: "",
-      choiceA : "Wrong",
-      choiceB : "Correct",
-      choiceC : "Wrong",
-      choiceD : "Wrong",
+      question : "What language is NOT used as a tool for front end developers?",
+      // imgSrc: "",
+      choiceA : "HTML",
+      choiceB : "Excel",
+      choiceC : "CSS",
+      choiceD : "JQuery",
       correct : "B"
   }, {
-    question : "What does 143 stand for?",
-      imgSrc: "",
-      choiceA : "Wrong",
-      choiceB : "Wrong",
-      choiceC : "Correct",
-      choiceD : "Wrong",
+    question : "Which code MUST appear at the very bottom of body in html?",
+      // imgSrc: "",
+      choiceA : "link to jQuery",
+      choiceB : "link to CSS",
+      choiceC : "link to JavaScript",
+      choiceD : "ajax call",
       correct : "C"
   }, {
-    question : "What does llee stand for?",
-      imgSrc: "",
-      choiceA : "Wrong",
-      choiceB : "Wrong",
-      choiceC : "Wrong",
-      choiceD : "Correct",
+    question : "What symbol/s surrounds an array?",
+      // imgSrc: "",
+      choiceA : "{}",
+      choiceB : " `` ",
+      choiceC : "()",
+      choiceD : "[]",
       correct : "D"
   }
 ];
@@ -66,7 +66,7 @@ function renderQuestion(){
   let q = questions[runningQuestion];
 
   question.innerHTML = "<p>" + q.question +"</p>";
-  qImg.innerHTML = "<img src=" + q.imgSrc +">";
+  // qImg.innerHTML = "<img src=" + q.imgSrc +">";
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
@@ -159,8 +159,8 @@ function scoreRender(){
             (scorePercent >= 60) ? "" :
             (scorePercent >= 40) ? "" :
             (scorePercent >= 20) ? "" :
-            "";
-    scoreDiv.innerHTML = "<img src=" + img + ">";
+    //         "";
+    // scoreDiv.innerHTML = "<img src=" + img + ">";
     scoreDiv.innerHTML = "<p>" + scorePercent + "%</p>";
             
 }

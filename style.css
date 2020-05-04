@@ -4,7 +4,7 @@ body{
 }
 
 #container{
-  margin : 20px auto;
+  margin : 180px auto;
   background-color: white;
   height: 300px;
   width : 700px;
@@ -16,14 +16,15 @@ body{
   font-size: 1.5em;
   font-weight: bolder;
   word-break: break-all;
-  width:100px;
+  width:330px;
   height:150px;
-  border : 2px solid lightgrey;
+  border : 5px solid lightgrey;
   text-align: center;
   cursor: pointer;
   position: absolute;
-  left:300px;
-  top:50px;
+  padding-top: 50px;
+  left:200px;
+  top:80px;
   color : lightgrey;
 }
 #start:hover{
